@@ -43,12 +43,6 @@
       "parameters": ""
     },
     {
-      "name": "blacklist",
-      "description": "Insert a player in the blacklist",
-      "domain": "exarch",
-      "parameters": ""
-    },
-    {
       "name": "board",
       "description": "Send the board",
       "domain": "all",
@@ -185,12 +179,6 @@
       "description": "Unban a player",
       "domain": "exarch",
       "parameters": ""
-    },
-    {
-      "name": "unblacklist",
-      "description": "Remove a player from the blacklist",
-      "domain": "exarch",
-      "parameters": "&lt;username&gt;"
     },
     {
       "name": "unmute",
