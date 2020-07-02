@@ -3,6 +3,13 @@ DROP DATABASE IF EXISTS `DragonEducatorBot`;
 CREATE DATABASE `DragonEducatorBot` DEFAULT CHARACTER SET utf8;
 USE `DragonEducatorBot`;
 
+CREATE TABLE `info` (
+  `id` INT AUTO_INCREMENT,
+  `key` TEXT NOT NULL,
+  `value` TEXT NOT NULL,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8;
+
 CREATE TABLE `Items` (
   `id` INT,
   `name` TEXT DEFAULT NULL,
