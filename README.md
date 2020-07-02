@@ -1,6 +1,6 @@
-# Bot template
+# DragonEducatorBot
 
-**Python template** for building a **Bot**
+**Bot**, created by [Giulio Coa](https://t.me/giulioCoaInCamelCase), that manage the Dragon Guild for [Loot Bot](https://t.me/lootgamebot)
 
 
 

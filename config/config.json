@@ -2,32 +2,56 @@
   "commands": [
     {
       "name": "add",
-      "description": "Add an admin to the database",
+      "description": "Add an admin, or a chat, to the database",
       "domain": "creator",
-      "parameters": ""
+      "parameters": "[domain] [type_into_guild]"
+    },
+    {
+      "name": "addnest",
+      "description": "Enable a player to apply for loans in the Nest",
+      "domain": "exarch",
+      "parameters": "&lt;username&gt; &lt;objective_level&gt;"
     },
     {
       "name": "ads",
       "description": "Announce an information in all chats of the Guild",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": "&lt;text&gt;"
+    },
+    {
+      "name": "assignments",
+      "description": "Show the assignments' list",
+      "domain": "all",
+      "parameters": "&lt;name&gt;"
+    },
+    {
+      "name": "backpack",
+      "description": "Show the player's backpack",
+      "domain": "all",
+      "parameters": ""
     },
     {
       "name": "ban",
       "description": "Ban a player",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
     },
     {
       "name": "banall",
       "description": "Ban a player from all chats",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
     },
     {
       "name": "blacklist",
       "description": "Insert a player in the blacklist",
-      "domain": "admin",
+      "domain": "exarch",
+      "parameters": ""
+    },
+    {
+      "name": "board",
+      "description": "Send the board",
+      "domain": "all",
       "parameters": ""
     },
     {
@@ -37,14 +61,26 @@
       "parameters": ""
     },
     {
-      "name": "command1",
-      "description": "Command example",
+      "name": "craft",
+      "description": "Start a craft process",
+      "domain": "all",
+      "parameters": "&lt;item&gt;:&lt;quantity&gt;[, &lt;item&gt;:&lt;quantity&gt;[, ...]]"
+    },
+    {
+      "name": "craftb",
+      "description": "Start a craft process without use the crafted items into the players' backpack",
+      "domain": "all",
+      "parameters": "&lt;item&gt;:&lt;quantity&gt;[, &lt;item&gt;:&lt;quantity&gt;[, ...]]"
+    },
+    {
+      "name": "globalundertaking",
+      "description": "Show the data of the global undertaking",
       "domain": "all",
       "parameters": ""
     },
     {
-      "name": "command2",
-      "description": "Command example",
+      "name": "groups",
+      "description": "Show the groups of the Guild",
       "domain": "all",
       "parameters": ""
     },
@@ -57,14 +93,20 @@
     {
       "name": "init",
       "description": "Initializing a bot's parameters",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
     },
     {
       "name": "kick",
       "description": "Kick a player",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
+    },
+    {
+      "name": "lendnest",
+      "description": "Lend some Dragon's stones to another player",
+      "domain": "all",
+      "parameters": "&lt;points&gt; to &lt;username&gt;"
     },
     {
       "name": "link",
@@ -75,14 +117,20 @@
     {
       "name": "mute",
       "description": "Mute a player",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": "[time]"
     },
     {
       "name": "remove",
-      "description": "Remove an admin from the database",
+      "description": "Remove an admin, or a chat, from the database",
       "domain": "creator",
       "parameters": ""
+    },
+    {
+      "name": "repaynest",
+      "description": "Repay some Dragon's stones to another player",
+      "domain": "all",
+      "parameters": "&lt;points&gt; to &lt;username&gt;"
     },
     {
       "name": "report",
@@ -91,9 +139,39 @@
       "parameters": ""
     },
     {
+      "name": "rules",
+      "description": "Send a the rules of the Guild",
+      "domain": "all",
+      "parameters": ""
+    },
+    {
+      "name": "rulesnest",
+      "description": "Show the rules for a nest request",
+      "domain": "all",
+      "parameters": ""
+    },
+    {
+      "name": "sellstones",
+      "description": "Create the string for the sell of the Dragon's stones",
+      "domain": "all",
+      "parameters": "&lt;points&gt; &lt;price_for_point&gt;"
+    },
+    {
+      "name": "setwelcome",
+      "description": "Set the welcome message for a chat",
+      "domain": "exarch",
+      "parameters": "&lt;text&gt;"
+    },
+    {
       "name": "silence",
       "description": "Silence a chat",
-      "domain": "admin",
+      "domain": "exarch",
+      "parameters": ""
+    },
+    {
+      "name": "staff",
+      "description": "Show the staff of the bot",
+      "domain": "all",
       "parameters": ""
     },
     {
@@ -105,31 +183,49 @@
     {
       "name": "unban",
       "description": "Unban a player",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
     },
     {
       "name": "unblacklist",
       "description": "Remove a player from the blacklist",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": "&lt;username&gt;"
     },
-     {
+    {
       "name": "unmute",
       "description": "Unmute a player",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
     },
      {
       "name": "unsilence",
       "description": "Unsilence a chat",
-      "domain": "admin",
+      "domain": "exarch",
       "parameters": ""
     },
-   {
+    {
       "name": "update",
       "description": "Update the database",
-      "domain": "admin",
+      "domain": "exarch",
+      "parameters": ""
+    },
+    {
+      "name": "updateitems",
+      "description": "Update the database (only Items table)",
+      "domain": "exarch",
+      "parameters": ""
+    },
+    {
+      "name": "updateplayers",
+      "description": "Update the database (only Players table)",
+      "domain": "exarch",
+      "parameters": ""
+    },
+    {
+      "name": "updaterecipes",
+      "description": "Update the database (only Recipes table)",
+      "domain": "exarch",
       "parameters": ""
     }
   ],
@@ -137,12 +233,11 @@
     "host": "localhost",
     "username": "username",
     "password": "password",
-    "port": 3306,
-    "name": "name"
+    "port": 3306
   },
   "logger": {
     "format": "%(asctime)s [%(levelname)s] %(message)s",
     "level": 20,
-    "path": "log/Bot.log"
+    "path": "log/DragonEducatorBot.log"
   }
 }
