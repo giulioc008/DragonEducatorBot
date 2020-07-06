@@ -122,7 +122,7 @@ with connection.cursor() as cursor:
 	players_allowed_list = list(map(lambda n: int(n["id"]), cursor.fetchall()))
 
 logger.info("Chats initializated\nInitializing the Client ...")
-app = Client(session_name=config.get("bot_username"), api_id=config.get("app_id"), api_hash=config.get("app_hash"), bot_token=config.get("bot_token"), lang_code="it")
+app = Client(session_name=config.get("bot_username"), api_id=config.get("app_id"), api_hash=config.get("app_hash"), bot_token=config.get("bot_token"), lang_code="it", workdir=".")
 
 
 @app.on_message(Filters.command("add", prefixes="/") & (Filters.user(admins_list) | Filters.channel))
