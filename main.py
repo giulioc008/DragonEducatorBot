@@ -122,7 +122,7 @@ with connection.cursor() as cursor:
 	players_allowed_list = list(map(lambda n: int(n["id"]), cursor.fetchall()))
 
 logger.info("Chats initializated\nInitializing the Client ...")
-app = Client(session_name=config.get("bot_username"), api_id=config.get("app_id"), api_hash=config.get("app_hash"), bot_token=config.get("bot_token"), lang_code="it", workdir=".")
+app = Client(session_name=config.get("bot_username"), api_id=config.get("app_id"), api_hash=config.get("app_hash"), bot_token=config.get("bot_token"), lang_code="it", workdir=".", parse_mode="html")
 
 
 @app.on_message(Filters.command("add", prefixes="/") & (Filters.user(admins_list) | Filters.channel))
@@ -2269,10 +2269,7 @@ async def update_recipes(_, message: Message):
 	logger.info("I\'ve answered to /updaterecipes because of @{}.".format(message.from_user.username))
 
 
-logger.info("Client initializated\nSetting the markup syntax ...")
-app.set_parse_mode("html")
-
-logger.info("Set the markup syntax\nStarted serving ...")
+logger.info("Client initializated\nStarted serving ...")
 scheduler.start()
 app.run()
 connection.close()
