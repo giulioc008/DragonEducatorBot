@@ -1,5 +1,4 @@
 DROP DATABASE IF EXISTS `DragonEducatorBot`;
-
 CREATE DATABASE `DragonEducatorBot` DEFAULT CHARACTER SET utf8;
 USE `DragonEducatorBot`;
 
